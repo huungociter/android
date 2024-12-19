@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/background">
+
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="145dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/logosmc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- QR Scanner Text -->
+    <TextView
+        android:id="@+id/qrScannerText"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
+        android:text="QR SCANNER"
+        android:textStyle="bold"
+        android:textColor="#417EC5"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logoImage" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/scan_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="335dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:hint="Scan or enter code"
+        android:imeOptions="actionDone"
+        app:endIconMode="clear_text"
+        app:helperTextTextColor="#E30000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/qrScannerText"
+        app:layout_constraintVertical_bias="0.019"
+        app:startIconDrawable="@drawable/qr_icon">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/scan_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_addDevice"
+        android:layout_width="162dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="8dp"
+        android:text="ADD DEVICE"
+        android:textColor="#ffffff"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:backgroundTint="#3A75C4"
+        app:icon="@drawable/add_icon"
+        app:iconGravity="textStart"
+        app:iconPadding="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scan_input_layout"
+        app:startIconDrawable="@drawable/add_icon" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_logout"
+        android:layout_width="141dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="416dp"
+        android:text="Logout"
+        android:textColor="#ffffff"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:backgroundTint="#A5A5A6"
+        app:icon="@drawable/back_icon"
+        app:iconGravity="textStart"
+        app:iconPadding="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.225"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_addDevice" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="417dp"
+        android:layout_height="316dp"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_addDevice"
+        app:layout_constraintVertical_bias="0.096">
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:stretchColumns="1">
+
+            <!-- Hàng tiêu đề -->
+            <TableRow android:background="#E0E0E0">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="STT"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Serial Number"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Status"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Comment"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <!-- Hàng dữ liệu mẫu -->
+            <TableRow>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="SN12345" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Active" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Not in list" />
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_save"
+        android:layout_width="130dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="416dp"
+        android:text="Save"
+        android:textColor="#ffffff"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:backgroundTint="#3A75C4"
+        app:icon="@drawable/save_icon"
+        app:iconGravity="textEnd"
+        app:iconPadding="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_addDevice" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
