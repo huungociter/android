@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.LoginActivity"
+    android:background="@drawable/background">
+
+    <!-- Logo -->
+
+    <ImageButton
+        android:id="@+id/btn_flag"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="16dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="Select Language"
+        android:scaleType="centerCrop"
+        android:src="@drawable/flag_uk"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="282dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="68dp"
+        android:src="@drawable/logosmc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- TextInputLayout căn giữa màn hình -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/EmployeeId_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="335dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:hint="@string/employee_id"
+        android:imeOptions="actionDone"
+        app:endIconMode="clear_text"
+        app:helperTextTextColor="#E30000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logoImage"
+        app:layout_constraintVertical_bias="0.203"
+        app:startIconDrawable="@drawable/account" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/EmployeeId_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gray_background" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/date_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="335dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:hint="@string/date_scan"
+        android:imeOptions="actionDone"
+        app:endIconMode="clear_text"
+        app:helperTextTextColor="#E30000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/EmployeeId_input_layout"
+        app:layout_constraintVertical_bias="0.069"
+        app:startIconDrawable="@drawable/calender">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/date_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:focusable="false"
+            android:clickable="true"
+            android:longClickable="false"
+            android:background="@drawable/gray_background"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_Login"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/login"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:backgroundTint="#3A75C4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/date_input_layout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

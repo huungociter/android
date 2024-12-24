@@ -1,10 +1,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.scanqrcode.MainActivity">
+    tools:context="com.example.scanqrcode.activities.LoginActivity">
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+        android:id="@+id/lang_english1"
+        android:title="English" />
+    <item
+        android:id="@+id/lang_vietnamese"
+        android:title="Tiếng Việt"/>
+    <item
+        android:id="@+id/lang_japanese"
+        android:title="日本語"/>
 </menu>

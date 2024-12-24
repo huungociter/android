@@ -5,8 +5,24 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".activities.LoginActivity"
     android:background="@drawable/background">
+
+    <ImageButton
+        android:id="@+id/btn_flag_scan_activity"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="16dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="Select Language"
+        android:scaleType="centerCrop"
+        android:src="@drawable/flag_uk"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <!-- Logo -->
     <ImageView
@@ -21,16 +37,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <!-- QR Scanner Text -->
+
     <TextView
         android:id="@+id/qrScannerText"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
+        android:layout_width="165dp"
+        android:layout_height="56dp"
         android:layout_marginTop="24dp"
-        android:text="QR SCANNER"
-        android:textStyle="bold"
+        android:text="@string/qr_scanner"
         android:textColor="#417EC5"
         android:textSize="25sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.528"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/logoImage" />
 
@@ -38,10 +56,10 @@
         android:id="@+id/scan_input_layout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="335dp"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginEnd="28dp"
-        android:hint="Scan or enter code"
+        android:hint="@string/scan_or_enter_serial_number"
         android:imeOptions="actionDone"
         app:endIconMode="clear_text"
         app:helperTextTextColor="#E30000"
@@ -55,15 +73,16 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/scan_edit_text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:background="@drawable/gray_background"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_addDevice"
-        android:layout_width="162dp"
-        android:layout_height="46dp"
+        android:layout_width="179dp"
+        android:layout_height="45dp"
         android:layout_marginTop="8dp"
-        android:text="ADD DEVICE"
+        android:text="@string/add_device"
         android:textColor="#ffffff"
         android:textSize="14sp"
         android:textStyle="bold"
@@ -78,10 +97,10 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_logout"
-        android:layout_width="141dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="416dp"
-        android:text="Logout"
+        android:layout_width="147dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="388dp"
+        android:text="@string/logout"
         android:textColor="#ffffff"
         android:textSize="14sp"
         android:textStyle="bold"
@@ -90,14 +109,14 @@
         app:iconGravity="textStart"
         app:iconPadding="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.225"
+        app:layout_constraintHorizontal_bias="0.14"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_addDevice" />
 
     <ScrollView
         android:id="@+id/scrollView"
-        android:layout_width="417dp"
-        android:layout_height="316dp"
+        android:layout_width="388dp"
+        android:layout_height="313dp"
         android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -116,86 +135,54 @@
             <TableRow android:background="#E0E0E0">
 
                 <TextView
+                    android:id="@+id/stt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/border"
                     android:gravity="center"
                     android:padding="8dp"
-                    android:text="STT"
+                    android:text="@string/stt"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/serial_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/border"
                     android:gravity="center"
                     android:padding="8dp"
-                    android:text="Serial Number"
+                    android:text="@string/serial_number"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/status"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/border"
                     android:gravity="center"
                     android:padding="8dp"
-                    android:text="Status"
+                    android:text="@string/status"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/comment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/border"
                     android:gravity="center"
                     android:padding="8dp"
-                    android:text="Comment"
+                    android:text="@string/comment"
                     android:textStyle="bold" />
-            </TableRow>
-
-            <!-- Hàng dữ liệu mẫu -->
-            <TableRow>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border"
-                    android:gravity="center"
-                    android:padding="8dp"
-                    android:text="1" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border"
-                    android:gravity="center"
-                    android:padding="8dp"
-                    android:text="SN12345" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border"
-                    android:gravity="center"
-                    android:padding="8dp"
-                    android:text="Active" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border"
-                    android:gravity="center"
-                    android:padding="8dp"
-                    android:text="Not in list" />
             </TableRow>
         </TableLayout>
     </ScrollView>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_save"
-        android:layout_width="130dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="416dp"
-        android:text="Save"
+        android:layout_width="155dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="388dp"
+        android:text="@string/save"
         android:textColor="#ffffff"
         android:textSize="14sp"
         android:textStyle="bold"
@@ -204,7 +191,7 @@
         app:iconGravity="textEnd"
         app:iconPadding="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintHorizontal_bias="0.938"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_addDevice" />
 
