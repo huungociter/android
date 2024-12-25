@@ -39,4 +39,5 @@
     <string name="status">Trạng thái</string>
     <string name="comment">Ghi chú</string>
     <string name="serial_number_duplicate_in_table">Số serial bị trùng lặp trong bảng</string>
+    <string name="inventory_month">Inventory Month</string>
 </resources>

@@ -7,6 +7,7 @@ import android.app.DatePickerDialog
 import java.text.SimpleDateFormat
 import android.content.Intent
 import android.view.MenuItem
+import android.view.View
 import android.widget.ImageButton
 import android.widget.PopupMenu
 import android.widget.Toast
@@ -43,7 +44,7 @@ class LoginActivity : AppCompatActivity() {
         LanguageUtils.loadLanguage(this, buttonFlag)
 
         // Set the current date in the TextInputEditText
-        val currentDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
+        val currentDate = SimpleDateFormat("yyyy-MM", Locale.getDefault()).format(Date())
         dateEditText.setText(currentDate)
 
 
@@ -53,17 +54,29 @@ class LoginActivity : AppCompatActivity() {
             val calendar = Calendar.getInstance()
             val year = calendar.get(Calendar.YEAR)
             val month = calendar.get(Calendar.MONTH)
-            val day = calendar.get(Calendar.DAY_OF_MONTH)
 
-            // Display the DatePickerDialog
+            // Sử dụng DatePickerDialog chỉ để chọn năm và tháng
             val datePickerDialog = DatePickerDialog(
                 this,
-                { _, selectedYear, selectedMonth, selectedDay ->
-                    val selectedDate = "$selectedYear-${selectedMonth + 1}-$selectedDay"
+                { _, selectedYear, selectedMonth, _ ->
+                    val selectedDate = "$selectedYear-${selectedMonth + 1}" // Chỉ hiển thị năm và tháng
                     dateEditText.setText(selectedDate)
                 },
-                year, month, day
+                year, month, 1 // Đặt ngày là 1
             )
+
+            // Ẩn ngày bằng cách thiết lập chế độ chỉ chọn năm và tháng
+            try {
+                val datePicker = datePickerDialog.datePicker
+                val daySpinnerId = resources.getIdentifier("day", "id", "android")
+                val daySpinner = datePicker.findViewById<View>(daySpinnerId)
+                if (daySpinner != null) {
+                    daySpinner.visibility = View.GONE
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+
             datePickerDialog.show()
         }
 
@@ -140,7 +153,7 @@ class LoginActivity : AppCompatActivity() {
 
         // Cập nhật văn bản cho các view
         employeeIdInputLayout.hint = getString(R.string.employee_id)
-        dateInputLayout.hint = getString(R.string.date_scan)
+        dateInputLayout.hint = getString(R.string.inventory_month)
         loginButton.text = getString(R.string.login)
     }
 }

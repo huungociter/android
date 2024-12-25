@@ -70,7 +70,7 @@
         android:layout_height="60dp"
         android:layout_marginStart="28dp"
         android:layout_marginEnd="28dp"
-        android:hint="@string/date_scan"
+        android:hint="@string/inventory_month"
         android:imeOptions="actionDone"
         app:endIconMode="clear_text"
         app:helperTextTextColor="#E30000"

@@ -42,6 +42,7 @@ class ScanActivity : AppCompatActivity() {
         val saveButton: MaterialButton = findViewById(R.id.btn_save)
         val tableLayout: TableLayout = findViewById(R.id.tableLayout)
         val addDeviceButton: MaterialButton = findViewById(R.id.btn_addDevice)
+        var nameDeviceScan : String
         var currentIndex = 1
 
         buttonFlag = findViewById(R.id.btn_flag_scan_activity)
@@ -99,24 +100,24 @@ class ScanActivity : AppCompatActivity() {
             }
         }
 
-        // Logout button click listener
-        logoutButton.setOnClickListener {
-            val builder = AlertDialog.Builder(this)
-            builder.setTitle(getString(R.string.logout_confirmation_title))
-            builder.setMessage(getString(R.string.logout_confirmation_message))
-
-            builder.setPositiveButton(getString(R.string.yes)) { dialog, _ ->
-                val intent = Intent(this, LoginActivity::class.java)
-                startActivity(intent)
-                dialog.dismiss()
-            }
-            builder.setNegativeButton(getString(R.string.no)) { dialog, _ ->
-                dialog.dismiss()
-            }
-
-            val alertDialog = builder.create()
-            alertDialog.show()
-        }
+//        // Logout button click listener
+//        logoutButton.setOnClickListener {
+//            val builder = AlertDialog.Builder(this)
+//            builder.setTitle(getString(R.string.logout_confirmation_title))
+//            builder.setMessage(getString(R.string.logout_confirmation_message))
+//
+//            builder.setPositiveButton(getString(R.string.yes)) { dialog, _ ->
+//                val intent = Intent(this@ScanActivity, LoginActivity::class.java)
+//                startActivity(intent)
+//                dialog.dismiss()
+//            }
+//            builder.setNegativeButton(getString(R.string.no)) { dialog, _ ->
+//                dialog.dismiss()
+//            }
+//
+//            val alertDialog = builder.create()
+//            alertDialog.show()
+//        }
 
         // Save button click listener
         saveButton.setOnClickListener {

@@ -39,4 +39,5 @@
     <string name="status">状態</string>
     <string name="comment">コメント</string>
     <string name="serial_number_duplicate_in_table">シリアル反復回数が重複しています</string>
+    <string name="inventory_month">棚卸月</string>
 </resources>
